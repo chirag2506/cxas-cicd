@@ -38,15 +38,25 @@ jobs:
 
       - name: Set up Cloud SDK
         uses: google-github-actions/setup-gcloud@v2
+      
+      - name: Fetch Secret from GCP Secret Manager
+        id: gcp_secrets
+        uses: google-github-actions/get-secretmanager-secrets@v2
+        with:
+          secrets: |-
+            CONFIG_VALUE:projects/${{ secrets.GCP_PROJECT_ID }}/secrets/${{ secrets.GCP_APP_SECRET_ID }}/versions/latest
+      
+      # - name: Patch Configuration
+      #   env:
+      #     MY_SECRET_VAL: ${{ steps.gcp_secrets.outputs.CONFIG_VALUE }}
+      #     TARGET_DIR: ${{ env.SOURCE_APP_ID }}   # passes 'agents/temp'
+      #   run: |
+      #     python config_updates/update.py
 
       - name: Install cxas-scrapi
         run: |
           python -m pip install --upgrade pip
           pip install cxas-scrapi
-
-      # - name: Validate Agent Configuration (Optional)
-      #   run: |
-      #     cxas lint
 
       - name: Deploy to CX Agent Studio
         run: |

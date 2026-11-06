@@ -1,0 +1,48 @@
+name: Deploy CX Agent Studio App
+
+on:
+  push:
+    branches:
+      - git_agent_copt
+  workflow_dispatch: # Allows manual trigger from GitHub UI
+
+permissions:
+  contents: read
+  id-token: write # Required for Workload Identity Federation OIDC token
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+
+      - name: Authenticate to Google Cloud
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: ${{ vars.WIF_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+          project_id: ${{ vars.GCP_PROJECT_ID }}
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Install cxas-scrapi
+        run: |
+          python -m pip install --upgrade pip
+          pip install cxas-scrapi
+
+      # - name: Validate Agent Configuration (Optional)
+      #   run: |
+      #     cxas lint
+
+      - name: Deploy to CX Agent Studio
+        run: |
+          cxas push --to projects/comics-95ede/locations/us/apps/5d097d1e-09ee-4092-ae61-a54623a26cc0 --app-dir agents/tem

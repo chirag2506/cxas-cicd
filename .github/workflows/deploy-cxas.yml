@@ -10,6 +10,11 @@ permissions:
   contents: read
   id-token: write # Required for Workload Identity Federation OIDC token
 
+env:
+  LOCATION: us
+  TARGET_APP_ID:  ${{ secrets.TARGET_APP_ID }}
+  SOURCE_APP_ID: agents/temp
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -45,4 +50,4 @@ jobs:
 
       - name: Deploy to CX Agent Studio
         run: |
-          cxas push --to projects/comics-95ede/locations/us/apps/5d097d1e-09ee-4092-ae61-a54623a26cc0 --app-dir agents/temp
+          cxas push --to projects/${{ secrets.GCP_PROJECT_ID }}/locations/${{ env.LOCATION }}/apps/${{ env.TARGET_APP_ID }} --app-dir ${{ env.SOURCE_APP_ID }} 

@@ -10,6 +10,7 @@ try:
         print("Updating environment.json")
         if config_json.get("environment", None) is not None and isinstance(config_json["environment"], dict):
             with open(f"{target_dir}/environment.json", "w") as f:
+                print(json.dumps(config_json["environment"]))
                 f.write(json.dumps(config_json["environment"]))
         print("Updated environment.json")
 

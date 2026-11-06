@@ -45,4 +45,4 @@ jobs:
 
       - name: Deploy to CX Agent Studio
         run: |
-          cxas push --to projects/comics-95ede/locations/us/apps/5d097d1e-09ee-4092-ae61-a54623a26cc0 --app-dir agents/tem
+          cxas push --to projects/comics-95ede/locations/us/apps/5d097d1e-09ee-4092-ae61-a54623a26cc0 --app-dir agents/temp

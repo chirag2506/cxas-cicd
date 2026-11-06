@@ -46,12 +46,12 @@ jobs:
           secrets: |-
             CONFIG_VALUE:projects/${{ secrets.GCP_PROJECT_ID }}/secrets/${{ secrets.GCP_APP_SECRET_ID }}/versions/latest
       
-      # - name: Patch Configuration
-      #   env:
-      #     MY_SECRET_VAL: ${{ steps.gcp_secrets.outputs.CONFIG_VALUE }}
-      #     TARGET_DIR: ${{ env.SOURCE_APP_ID }}   # passes 'agents/temp'
-      #   run: |
-      #     python config_updates/update.py
+      - name: Patch Configuration
+        env:
+          CONFIG_VALUE: ${{ steps.gcp_secrets.outputs.CONFIG_VALUE }}
+          TARGET_DIR: ${{ env.SOURCE_APP_ID }}   # passes 'agents/temp'
+        run: |
+          python config_updates/update.py
 
       - name: Install cxas-scrapi
         run: |

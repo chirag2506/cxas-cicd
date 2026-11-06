@@ -1,0 +1,9 @@
+{
+  "toolsets": {
+    "openapi_test_tool": {
+      "openApiToolset": {
+        "url": "https://webhook.site/233b0d19-cc16-49eb-9eb4-573574e0d451"
+      }
+    }
+  }
+}

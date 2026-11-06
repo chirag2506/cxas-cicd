@@ -20,24 +20,34 @@
     "model": "gemini-3.1-flash-live"
   },
   "variableDeclarations": [{
+    "name": "mock_mode",
+    "schema": {
+      "type": "BOOLEAN",
+      "default": true
+    }
+  }, {
     "name": "response_mesage",
     "schema": {
-      "type": "STRING"
+      "type": "STRING",
+      "default": null
     }
   }, {
     "name": "user_email",
     "schema": {
-      "type": "STRING"
+      "type": "STRING",
+      "default": null
     }
   }, {
     "name": "user_name",
     "schema": {
-      "type": "STRING"
+      "type": "STRING",
+      "default": null
     }
   }, {
     "name": "user_phone",
     "schema": {
-      "type": "STRING"
+      "type": "STRING",
+      "default": null
     }
   }],
   "globalInstruction": "global_instruction.txt",

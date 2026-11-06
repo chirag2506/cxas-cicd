@@ -1,0 +1,11 @@
+{
+  "name": "e8bdb069-b98e-4e8b-b1b1-8e979b901bc5",
+  "displayName": "openapi_test_tool",
+  "openApiToolset": {
+    "openApiSchema": "toolsets/openapi_test_tool/open_api_toolset/open_api_schema.yaml",
+    "apiAuthentication": {
+      "serviceAgentIdTokenAuthConfig": {
+      }
+    }
+  }
+}

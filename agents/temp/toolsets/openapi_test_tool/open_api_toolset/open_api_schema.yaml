@@ -1,0 +1,38 @@
+openapi: 3.0.3
+info:
+  title: Telephone Orders Status
+  version: 2.2.0
+  description: >
+    Identifies a caller by ANI.
+servers:
+  - url: $env_var
+paths:
+  /v1/telephone:
+    post:
+      summary: Get telephone orders status 
+      operationId: getTelephoneOrdersStatus
+      description: >
+        Returns session variables for the caller identified by `call_ani`
+      parameters:
+        - name: call_ani
+          in: query
+          required: true
+          description: The caller's ANI (phone number), provided by the CCaaS platform.
+          schema:
+            type: string
+            example: "3157188485"
+        - name: call_id
+          in: query
+          required: true
+          description: Telephony call identifier.
+          schema:
+            type: string
+            example: "300000060059297"
+      responses:
+        '200':
+          description: Successful response (XML document).
+          content:
+            application/xml:
+              schema:
+                type: string
+                description: Raw XML payload.

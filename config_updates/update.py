@@ -8,9 +8,9 @@ try:
     if target_dir != "":
         # env.json
         print("Updating environment.json")
-        if config_json.get("environment", None) is not None and isinstance(config_json["enviroment"], dict):
+        if config_json.get("environment", None) is not None and isinstance(config_json["environment"], dict):
             with open(f"{target_dir}/environment.json", "w") as f:
-                f.write(json.dumps(config_json["enviroment"]))
+                f.write(json.dumps(config_json["environment"]))
         print("Updated environment.json")
 
         # var updates

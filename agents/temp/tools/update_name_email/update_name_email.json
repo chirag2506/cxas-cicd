@@ -1,0 +1,9 @@
+{
+  "name": "1fb8b975-6d49-46e1-a9de-664755427838",
+  "pythonFunction": {
+    "name": "update_name_email",
+    "pythonCode": "tools/update_name_email/python_function/python_code.py"
+  },
+  "executionType": "SYNCHRONOUS",
+  "displayName": "update_name_email"
+}

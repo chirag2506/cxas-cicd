@@ -1,0 +1,4 @@
+venv
+agents/*
+!agents/README.md
+!agents/temp

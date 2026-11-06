@@ -1,0 +1,6 @@
+{
+  "name": "c6311c69-a4e8-4f8a-af46-c869ebf4df8d",
+  "displayName": "weather_agent",
+  "instruction": "agents/weather_agent/instruction.txt",
+  "tools": ["end_session"]
+}

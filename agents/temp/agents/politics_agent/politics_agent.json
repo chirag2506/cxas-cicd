@@ -1,0 +1,6 @@
+{
+  "name": "6c297e30-c3fa-488f-b1bc-887a94494f40",
+  "displayName": "politics_agent",
+  "instruction": "agents/politics_agent/instruction.txt",
+  "tools": ["end_session"]
+}

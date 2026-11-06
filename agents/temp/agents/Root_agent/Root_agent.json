@@ -1,0 +1,10 @@
+{
+  "name": "0596e3f0-1e50-48a4-a587-f74d04c03512",
+  "displayName": "Root agent",
+  "instruction": "agents/Root_agent/instruction.txt",
+  "tools": ["end_session", "update_name_email", "yes_t"],
+  "childAgents": ["politics_agent", "weather_agent"],
+  "beforeModelCallbacks": [{
+    "pythonCode": "agents/Root_agent/before_model_callbacks/before_model_callbacks_01/python_code.py"
+  }]
+}

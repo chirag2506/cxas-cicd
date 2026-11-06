@@ -1,0 +1,10 @@
+{
+  "name": "b192a050-adc0-44e6-b98e-35db983cc755",
+  "pythonFunction": {
+    "name": "yes_t",
+    "pythonCode": "tools/yes_t/python_function/python_code.py"
+  },
+  "executionType": "SYNCHRONOUS",
+  "displayName": "yes_t",
+  "timeout": "65s"
+}

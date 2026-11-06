@@ -1,0 +1,58 @@
+{
+  "name": "5f47d557-9fcf-465c-9005-5dfe191fa5ba",
+  "displayName": "temp",
+  "rootAgent": "Root agent",
+  "audioProcessingConfig": {
+    "synthesizeSpeechConfigs": {
+      "en-US": {
+      }
+    },
+    "inactivityTimeout": "30s",
+    "ambientSoundConfig": {
+    }
+  },
+  "loggingSettings": {
+    "conversationLoggingSettings": {
+    }
+  },
+  "guardrails": ["Safety Guardrail 1772104043645", "Prompt Guardrail 1772104043645"],
+  "modelSettings": {
+    "model": "gemini-3.1-flash-live"
+  },
+  "variableDeclarations": [{
+    "name": "response_mesage",
+    "schema": {
+      "type": "STRING"
+    }
+  }, {
+    "name": "user_email",
+    "schema": {
+      "type": "STRING"
+    }
+  }, {
+    "name": "user_name",
+    "schema": {
+      "type": "STRING"
+    }
+  }, {
+    "name": "user_phone",
+    "schema": {
+      "type": "STRING"
+    }
+  }],
+  "globalInstruction": "global_instruction.txt",
+  "languageSettings": {
+    "defaultLanguageCode": "en-US"
+  },
+  "defaultChannelProfile": {
+    "disableDtmf": false,
+    "disableBargeInControl": false,
+    "noiseSuppressionLevel": ""
+  },
+  "timeZoneSettings": {
+    "timeZone": "America/Los_Angeles"
+  },
+  "toolExecutionMode": "PARALLEL",
+  "errorHandlingSettings": {
+  }
+}

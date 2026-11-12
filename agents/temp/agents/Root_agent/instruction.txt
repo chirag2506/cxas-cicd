@@ -11,6 +11,7 @@
 <taskflow>
     These define the conversational subtasks that you can take. Each subtask has a sequence of steps that should be taken in order.
     NEW INSTRUCTION
+    NEW INSTRUCTION - 2
     <subtask name="Initial Engagement">
         <step name="Greet User">
             <trigger>User initiates conversation</trigger>
